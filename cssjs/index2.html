@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 2</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .item{
+                text-decoration: none;
+            }
+            
+            .text{
+                display: none;
+            }
+            .active{
+                display: inline !important;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <ul>
+                <li class="item">
+                    <h3><a href="#uno" class="title">Uno</a></h3>
+                    <div id="uno" class="text active">
+                        <p>Texto de uno</p>
+                    </div>
+                </li>
+                <li class="item">
+                    <h3><a href="#dos" class="title">Dos</a></h3>
+                    <div id="dos" class="text">
+                        <p>Texto de dos</p>
+                    </div>
+                </li>
+                <li class="item" >
+                    <h3><a href="#tres"  class="title">Tres</a></h3>
+                    <div id="tres" class="text">
+                        <p>Texto de tres</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function(){
+                $('.title').on('click',function(e){
+                    e.preventDefault();
+                   
+                   $('.text').removeClass('active');
+                   var element = $(this).attr('href');
+                   $(element).addClass('active');
+                });
+            });
+        </script>
+    </body>
+</html>

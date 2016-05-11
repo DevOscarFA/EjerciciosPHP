@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 3</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .resalta{
+                border: 1px solid red;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <form action="#">
+                <p><input type="text" class="number" ></p>
+                <p><input type="text" class="number" ></p>
+                <p><input type="text" class="number" ></p>
+                <p><input type="submit" class="button" value="validar" ></p>
+            </form>
+        </div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function(){
+                $('.button').on('click',function(e){
+                    e.preventDefault();
+                   
+                   $('.number').each(function(){
+                      if($.isNumeric($(this).val())){
+                          console.log('si')
+                          $(this).removeClass('resalta');
+                      } else{
+                          console.log('no')
+                          $(this).addClass('resalta');
+                      }
+                   });
+                   
+                });
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 2</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .item{
+                text-decoration: none;
+            }
+            
+            .text{
+                display: none;
+            }
+            .active{
+                display: inline !important;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function(){
+                
+                var url = 'http://api.openweathermap.org/data/2.5/weather?lat=4.809603&lon=-74.3487062&appid=0abd3be5b561798eed2e2de0a7288782';
+                $.ajax({
+                url: url,
+                dataType: 'json',
+                success: function(data){
+                    console.log(data)
+                    
+                }
+            });
+            });
+        </script>
+    </body>
+</html>
